@@ -24,7 +24,6 @@ pipeline {
     stage('plan') {
         steps {
             sh '''
-            export AWS_CRED=/home/pani/.aws/credentials
             terraform plan
             '''
         }
@@ -32,8 +31,7 @@ pipeline {
     stage('apply') {
         steps {
             sh '''
-            export AWS_CRED=/home/pani/.aws/credentials
-            terraform apply -auto-approve
+            terraform destroy -auto-approve
             '''
         }
     }
