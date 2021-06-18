@@ -8,4 +8,34 @@ pipeline {
             }
         }
     }
+    stage('init') {
+        steps {
+            sh '''
+            terraform init
+            '''
+        }
+    }
+    stage('validate') {
+        steps {
+            sh '''
+            terraform validate
+            '''
+        }
+    }
+    stage('plan') {
+        steps {
+            sh '''
+            export AWS_CRED=/home/pani/.aws/credentials
+            terraform plan
+            '''
+        }
+    }
+    stage('apply') {
+        steps {
+            sh '''
+            export AWS_CRED=/home/pani/.aws/credentials
+            terraform apply -auto-approve
+            '''
+        }
+    }
 }
