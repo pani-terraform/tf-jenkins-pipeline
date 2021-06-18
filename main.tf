@@ -8,7 +8,7 @@ variable "aws_ec2_tag" {}
 provider "aws" {
   profile = var.devprofile
   region = var.region
-  shared_credentials_file = "{{env `AWS_CRED`}}"
+  shared_credentials_file = "/home/pani/.aws/credentials"
 }
 
 resource "aws_instance" "ocp_bastion" {
