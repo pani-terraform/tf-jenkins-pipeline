@@ -25,7 +25,6 @@ pipeline {
         steps {
             sh '''
             export AWS_CRED=/home/pani/.aws/credentials
-            cat $AWS_CRED
             terraform plan
             '''
         }
