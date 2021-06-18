@@ -1,0 +1,5 @@
+region="us-east-1"
+devprofile = "tformdev"
+aws_ami = "ami-0097b12892c4e085d"
+aws_instance_type = "t2.micro"
+aws_ec2_tag = "tag:ocp_bastion"
