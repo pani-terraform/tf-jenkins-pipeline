@@ -7,7 +7,6 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/pani-terraform/tf-jenkins-pipeline']]])
             }
         }
-    }
     stage('init') {
         steps {
             sh '''
@@ -38,4 +37,6 @@ pipeline {
             '''
         }
     }
+ }
+
 }
